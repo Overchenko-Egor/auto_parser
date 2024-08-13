@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Data Processing</title>
 </head>
 <body>
-   <h1>HELLO</h1>
+    <h1>Введите данные</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ввод</button>
+    </form>
+
+    {% if result_table %}
+        <h2>Результаты:</h2>
+        <table border="1">
+            <tr>
+                <th>Текст</th>
+                <th>Длина</th>
+            </tr>
+            {% for row in result_table %}
+                <tr>
+                    <td>{{ row.row }}</td>
+                    <td>{{ row.length }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
 </body>
 </html>

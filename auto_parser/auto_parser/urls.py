@@ -20,5 +20,5 @@ from parser.views import index_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index_page)
+    path('', index_page, name='index'),
 ]
