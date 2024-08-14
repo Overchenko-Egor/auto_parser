@@ -4,7 +4,7 @@ from django.http import HttpRequest
 from .forms import InputForm
 import requests
 from bs4 import BeautifulSoup
-import parser.Main
+import parser.main
 
 
 
@@ -13,7 +13,7 @@ import parser.Main
 
 def process_data(input_data):
     
-    dat = parser.Main.p_masuma(input_data)
+    dat = parser.main.p_masuma(input_data)
 
     # table_data = [{'dat': dat}]
     return dat
